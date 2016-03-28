@@ -3232,7 +3232,7 @@ public class Parser {
         switch (type) {
         case CHAR_NAME:
             while (true) {
-                type = types[i];
+		    type = types[i];
                 if (type != CHAR_NAME && type != CHAR_VALUE) {
                     break;
                 }
@@ -3268,6 +3268,20 @@ public class Parser {
             return;
         }
         case CHAR_SPECIAL_2:
+            if (c == ':') {
+                while (true) {
+                    type = types[i];
+                    if (type != CHAR_NAME && type != CHAR_VALUE) {
+                        break;
+                    }
+                    i++;
+                 }
+                 currentToken = "?";
+                 currentTokenType = PARAMETER;
+                 parseIndex = i;
+                 return;
+            }
+
             if (types[i] == CHAR_SPECIAL_2) {
                 i++;
             }

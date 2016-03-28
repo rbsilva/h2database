@@ -44,7 +44,7 @@ public class Constants {
      * Additionally, a version number should be set to distinguish releases.
      * Example: ACME_SVN1651_BUILD3
      */
-    public static final String BUILD_VENDOR_AND_VERSION = null;
+    public static final String BUILD_VENDOR_AND_VERSION = "CI&T_NSK1_BUILD1";
 
     /**
      * The TCP protocol version number 6.
